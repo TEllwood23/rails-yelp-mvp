@@ -1,5 +1,8 @@
 class RestaurantsController < ApplicationController
 
+
+  before_action only: %i[new create show]
+
   def index
     @restaurants = Restaurant.all
   end
