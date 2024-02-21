@@ -5,7 +5,23 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    # raise
     @restaurant = Restaurant.find(params[:id])
   end
+
+  def new
+    @restaurant = Restaurant.new
+  end
+
+  def create
+    @restaurant = Restaurant.new(task_params)
+    @restaurant.save
+    redirect_to restaurants_path(@restaurant)
+  end
+
+  private
+
+  def task_params
+    params.require(:restaurant).permit(:name, :address, :phone_number, :category)
+  end
+
 end
