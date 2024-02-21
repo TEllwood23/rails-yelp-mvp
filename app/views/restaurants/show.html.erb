@@ -5,13 +5,14 @@
 <p>Category: <%= @restaurant.category %><p>
 
 <p><strong>Reviews</strong></p>
-<ul class="list-group">
-  <% @restaurant.reviews.each do |review| %>
-    <li class="list-group-item">Rating: <%= review.rating %></li>
-    <li class="list-group-item">Review: <%= review.content %></li>
-  <% end %>
-</ul>
-<br>
+  <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item">Rating: <%= review.rating %></li>
+      <li class="list-group-item">Review: <%= review.content %></li>
+
+    <% end %>
+  </ul>
+</li>
 
 
 <%= link_to 'Add Review', new_restaurant_review_path(@restaurant) %></label><br>
